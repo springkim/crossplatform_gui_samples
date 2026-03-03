@@ -1,10 +1,19 @@
+
 import tkinter as tk
 from tkinter import ttk
+from ttkthemes import ThemedStyle
+
 
 
 class App:
     def __init__(self, root):
         self.root = root
+        style = ThemedStyle(root)
+        #style.set_theme("equilux")  # dark theme
+        #style.set_theme("arc")
+        #style.set_theme("plastik")
+        style.set_theme("clearlooks")
+
         self.root.title("Tkinter Widget Example")
         self.root.geometry("400x500")
 
