@@ -4,3 +4,5 @@ flet
 wxpython
 ttkthemes
 customtkinter
+nicegui
+pywebview

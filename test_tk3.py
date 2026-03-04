@@ -10,7 +10,7 @@ class App(ctk.CTk):
         super().__init__()
 
         self.title("CustomTkinter Widget Example")
-        self.geometry("450x600")
+        self.geometry("480x640")
 
         # Main frame
         main_frame = ctk.CTkFrame(self)
@@ -54,7 +54,7 @@ class App(ctk.CTk):
 
         self.text_edit = ctk.CTkTextbox(main_frame, height=100)
         self.text_edit.grid(row=3, column=1, sticky="ew", pady=8)
-
+        self.text_edit.insert(ctk.END, "English\n한국어\n日本語")
         # ----- Slider -----
         ctk.CTkLabel(main_frame, text="Slider:").grid(row=4, column=0, sticky="w", pady=8)
 

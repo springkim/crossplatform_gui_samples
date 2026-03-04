@@ -3,7 +3,7 @@ import wx
 
 class MainFrame(wx.Frame):
     def __init__(self):
-        super().__init__(parent=None, title="wxPython 위젯 예제", size=(400, 500))
+        super().__init__(parent=None, title="wxPython 위젯 예제", size=(480, 640))
 
         panel = wx.Panel(self)
 
@@ -36,6 +36,7 @@ class MainFrame(wx.Frame):
         # 4. 텍스트 에디트 (멀티라인)
         form_sizer.Add(wx.StaticText(panel, label="텍스트Edit:"), 0, wx.ALIGN_CENTER_VERTICAL)
         self.text_ctrl = wx.TextCtrl(panel, style=wx.TE_MULTILINE)
+        self.text_ctrl.write("English\n한국어\n日本語")
         form_sizer.Add(self.text_ctrl, 1, wx.EXPAND)
 
         # 5. 슬라이더

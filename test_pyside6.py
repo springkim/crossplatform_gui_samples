@@ -10,7 +10,7 @@ class MainWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("PySide6 위젯 예제")
-        self.resize(400, 500)
+        self.resize(480, 640)
 
         # 전체 레이아웃
         main_layout = QVBoxLayout()
@@ -35,6 +35,7 @@ class MainWindow(QWidget):
         # 4. 텍스트 에디트
         self.text_edit = QTextEdit()
         self.text_edit.setPlaceholderText("여기에 텍스트 입력...")
+        self.text_edit.setPlainText("English\n한국어\n日本語")
         form_layout.addRow("텍스트Edit:", self.text_edit)
 
         # 5. 슬라이더

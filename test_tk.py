@@ -6,7 +6,7 @@ class App:
     def __init__(self, root):
         self.root = root
         self.root.title("Tkinter Widget Example")
-        self.root.geometry("400x500")
+        self.root.geometry("480x640")
 
         main_frame = ttk.Frame(root, padding=20)
         main_frame.pack(fill="both", expand=True)
@@ -44,6 +44,7 @@ class App:
         # ----- Text Edit -----
         ttk.Label(main_frame, text="TextEdit:").grid(row=3, column=0, sticky="nw", pady=5)
         self.text_edit = tk.Text(main_frame, height=5)
+        self.text_edit.insert(tk.END, "English\n한국어\n日本語")
         self.text_edit.grid(row=3, column=1, sticky="ew", pady=5)
 
         # ----- Slider -----

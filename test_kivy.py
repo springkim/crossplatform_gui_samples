@@ -1,4 +1,17 @@
 from kivy.app import App
+from kivy.config import Config
+
+Config.set('graphics', 'width', '480')
+Config.set('graphics', 'height', '640')
+import platform
+from kivy.core.text import LabelBase
+
+if platform.system() == 'Windows':
+    LabelBase.register('Roboto', 'C:/Windows/Fonts/malgun.ttf')
+elif platform.system() == 'Darwin':
+    LabelBase.register('Roboto', '/System/Library/Fonts/AppleSDGothicNeo.ttc')
+else:
+    LabelBase.register('Roboto', '/usr/share/fonts/truetype/noto/NotoSansKR-Regular.ttf')
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.checkbox import CheckBox
@@ -36,6 +49,7 @@ class SimpleListView(RecycleView):
 class MainLayout(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(
+
             orientation="vertical", spacing=10, padding=20, **kwargs
         )
 
@@ -76,6 +90,7 @@ class MainLayout(BoxLayout):
         text_layout = BoxLayout(size_hint_y=None, height=120)
         text_layout.add_widget(Label(text="TextEdit:", size_hint_x=0.3))
         self.text_input = TextInput(multiline=True)
+        self.text_input.text = "English\n한국어\n日本語"
         text_layout.add_widget(self.text_input)
         self.add_widget(text_layout)
 
@@ -112,6 +127,8 @@ class MainLayout(BoxLayout):
 
 
 class TestApp(App):
+    title = "Kivy Widget Example"
+
     def build(self):
         return MainLayout()
 

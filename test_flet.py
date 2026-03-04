@@ -3,8 +3,8 @@ import flet as ft
 
 def main(page: ft.Page):
     page.title = "Flet 위젯 예제"
-    page.window.width = 400
-    page.window.height = 500
+    page.window.width = 480
+    page.window.height = 640
 
     status_label = ft.Text("상태 표시 영역")
 
@@ -38,6 +38,7 @@ def main(page: ft.Page):
             ft.dropdown.Option("옵션 3"),
         ],
         on_select=on_dropdown_select,
+
     )
 
     # 4. 텍스트 에디트
@@ -47,6 +48,7 @@ def main(page: ft.Page):
         min_lines=3,
         max_lines=5,
     )
+    text_edit.value = "English\n한국어\n日本語"
 
     # 5. 슬라이더
     def on_slider_change(e):
